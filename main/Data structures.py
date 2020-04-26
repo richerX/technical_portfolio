@@ -39,6 +39,7 @@ class Queue():
 
     def pop(self):
         result = self.data[self.head]
+        self.data[self.head] = None
         self.head += 1
         self.length -= 1
         return result
