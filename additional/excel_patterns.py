@@ -3,7 +3,7 @@ openpyxl
 '''
 import openpyxl
 import datetime    
-wb = openpyxl.load_workbook(filename = "abc.xlsx")  # open existing table
+wb = openpyxl.load_workbook(filename = "filename.xlsx")  # open existing table
 wb = openpyxl.Workbook()                            # create new table
 sheet = wb.active                                   # grab the sheet
 article = sheet['A1'].value                         # grab the value
