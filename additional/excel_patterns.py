@@ -32,14 +32,15 @@ Google spreadsheets
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-        
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']  # do not touch
-credentials = ServiceAccountCredentials.from_json_keyfile_name('DiscreteMathResults-c9f026c9cefb.json', scope)  # json file of account (https://github.com/burnash/gspread/blob/master/README.md)
+json_file = ""  # json file of account (https://github.com/burnash/gspread/blob/master/README.md)
+url = ""    # url to the spreadsheet
+
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file, scope)
 gc = gspread.authorize(credentials)
-url = 'https://docs.google.com/spreadsheets/d/1nac83TAP2AU4bjLvzF_wtGG5HbFgTx3QL5a9XTfUi4I/edit#gid=17124170'  # url to the spreadsheet
 wb = gc.open_by_url(url)
 sheets = wb.worksheets()
 for sheet_open in sheets:
     sheet = wb.worksheet(sheet_open.title)
     matrix = sheet.get_all_values()  # we get all values on the list
+# do smth with matrix
