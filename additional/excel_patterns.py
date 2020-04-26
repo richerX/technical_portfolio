@@ -8,7 +8,7 @@ wb = openpyxl.Workbook()                            # create new table
 sheet = wb.active                                   # grab the sheet
 article = sheet['A1'].value                         # grab the value
 sheet["A1"] = 42                                    # insert the value
-wb.save('Olimp results.xlsx')                       # save table      
+wb.save('new_table.xlsx')                           # save table      
 ws['A2'] = datetime.datetime.now()                  # all types will be automatically converted
 
 
@@ -17,11 +17,11 @@ ws['A2'] = datetime.datetime.now()                  # all types will be automati
 xlwings (best for photos)
 '''
 import xlwings
-filepath = "abc.xlsx"
+filepath = "filename.xlsx"
 wb = xlwings.Book(filepath)
 sheet = wb.active
 article = sheet.range("A1").value
-sheet.range("A1").value = "article"
+sheet.range("A1").value = "text"
 
 
 
